@@ -97,7 +97,7 @@ function ProductPage() {
   const mrpForWeight = Math.round((unit / (100 - product.discount)) * 100);
   const wishlisted = isWishlisted(product.slug);
 
-  const related = relatedProducts(product.slug);
+  const related = relatedProducts(product);
   const recently = recentlyViewed()
     .filter((p) => p.slug !== product.slug)
     .slice(0, 4);

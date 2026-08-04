@@ -26,11 +26,7 @@ export function QuickViewModal({ product, isOpen, onClose }: QuickViewModalProps
   const mrp = Math.round((price / (100 - product.discount)) * 100);
 
   const handleAdd = () => {
-    addToCart({
-      slug: product.slug,
-      weight: selectedWeight,
-      quantity: qty,
-    });
+    addToCart(product.slug, selectedWeight, qty);
     onClose();
     setCartOpen(true);
   };

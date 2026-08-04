@@ -31,11 +31,7 @@ export function StickyAddToCart({ product, selectedWeight }: StickyAddToCartProp
   const price = lineUnitPrice(product, selectedWeight);
 
   const handleAdd = () => {
-    addToCart({
-      slug: product.slug,
-      weight: selectedWeight,
-      quantity: 1,
-    });
+    addToCart(product.slug, selectedWeight, 1);
     setCartOpen(true);
   };
 
