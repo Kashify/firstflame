@@ -1,0 +1,284 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * First Flames Spices — design system.
+ * Premium Indian food brand: Deep Forest Green, Royal Saffron, Warm Cream,
+ * Rich Gold, Spice Red. All colors in oklch. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-saffron: var(--saffron);
+  --color-saffron-foreground: var(--saffron-foreground);
+  --color-gold: var(--gold);
+  --color-spice: var(--spice);
+  --color-spice-foreground: var(--spice-foreground);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-soft: 0 1px 2px oklch(0.22 0.02 150 / 0.04), 0 8px 24px -12px oklch(0.22 0.02 150 / 0.16);
+  --shadow-lift: 0 2px 4px oklch(0.22 0.02 150 / 0.05), 0 24px 48px -20px oklch(0.22 0.02 150 / 0.28);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Warm Cream canvas, Charcoal ink */
+  --background: oklch(0.975 0.012 88);
+  --foreground: oklch(0.235 0.008 60);
+  --surface: oklch(0.962 0.014 86);
+  --surface-foreground: oklch(0.235 0.008 60);
+  --card: oklch(0.995 0.004 90);
+  --card-foreground: oklch(0.235 0.008 60);
+  --popover: oklch(0.995 0.004 90);
+  --popover-foreground: oklch(0.235 0.008 60);
+
+  /* Deep Forest Green */
+  --primary: oklch(0.375 0.055 158);
+  --primary-foreground: oklch(0.975 0.012 88);
+
+  --secondary: oklch(0.945 0.018 86);
+  --secondary-foreground: oklch(0.335 0.045 158);
+
+  --muted: oklch(0.945 0.014 86);
+  --muted-foreground: oklch(0.505 0.018 80);
+
+  /* Rich Gold as accent */
+  --accent: oklch(0.735 0.115 88);
+  --accent-foreground: oklch(0.235 0.008 60);
+
+  /* Royal Saffron */
+  --saffron: oklch(0.665 0.155 58);
+  --saffron-foreground: oklch(0.99 0.008 88);
+
+  --gold: oklch(0.735 0.115 88);
+
+  /* Spice Red */
+  --spice: oklch(0.515 0.145 32);
+  --spice-foreground: oklch(0.99 0.008 88);
+
+  --destructive: oklch(0.515 0.165 28);
+  --destructive-foreground: oklch(0.99 0.008 88);
+
+  --border: oklch(0.895 0.016 85);
+  --input: oklch(0.895 0.016 85);
+  --ring: oklch(0.375 0.055 158);
+
+  --sidebar: oklch(0.962 0.014 86);
+  --sidebar-foreground: oklch(0.235 0.008 60);
+  --sidebar-primary: oklch(0.375 0.055 158);
+  --sidebar-primary-foreground: oklch(0.975 0.012 88);
+  --sidebar-accent: oklch(0.945 0.018 86);
+  --sidebar-accent-foreground: oklch(0.335 0.045 158);
+  --sidebar-border: oklch(0.895 0.016 85);
+  --sidebar-ring: oklch(0.375 0.055 158);
+}
+
+.dark {
+  --background: oklch(0.185 0.015 155);
+  --foreground: oklch(0.955 0.012 88);
+  --surface: oklch(0.225 0.018 156);
+  --surface-foreground: oklch(0.955 0.012 88);
+  --card: oklch(0.235 0.02 157);
+  --card-foreground: oklch(0.955 0.012 88);
+  --popover: oklch(0.235 0.02 157);
+  --popover-foreground: oklch(0.955 0.012 88);
+
+  --primary: oklch(0.775 0.09 155);
+  --primary-foreground: oklch(0.185 0.015 155);
+
+  --secondary: oklch(0.275 0.022 157);
+  --secondary-foreground: oklch(0.955 0.012 88);
+
+  --muted: oklch(0.275 0.022 157);
+  --muted-foreground: oklch(0.735 0.018 85);
+
+  --accent: oklch(0.775 0.115 88);
+  --accent-foreground: oklch(0.185 0.015 155);
+
+  --saffron: oklch(0.735 0.15 60);
+  --saffron-foreground: oklch(0.185 0.015 155);
+
+  --gold: oklch(0.795 0.115 88);
+
+  --spice: oklch(0.615 0.145 32);
+  --spice-foreground: oklch(0.985 0.008 88);
+
+  --destructive: oklch(0.625 0.165 28);
+  --destructive-foreground: oklch(0.985 0.008 88);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.775 0.09 155);
+
+  --sidebar: oklch(0.225 0.018 156);
+  --sidebar-foreground: oklch(0.955 0.012 88);
+  --sidebar-primary: oklch(0.775 0.09 155);
+  --sidebar-primary-foreground: oklch(0.185 0.015 155);
+  --sidebar-accent: oklch(0.275 0.022 157);
+  --sidebar-accent-foreground: oklch(0.955 0.012 88);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.775 0.09 155);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-accent-foreground);
+  }
+}
+
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 84rem;
+  padding-inline: 1.25rem;
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@utility gold-rule {
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, var(--color-gold) 70%, transparent),
+    transparent
+  );
+  height: 1px;
+}
+
+/* Luxury D2C Utilities & Glassmorphism */
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(220, 180, 120, 0.22);
+}
+
+.dark .glass-card {
+  background: rgba(24, 38, 30, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 215, 130, 0.12);
+}
+
+@utility text-gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa771c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility gold-border-glow {
+  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.35);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 215, 130, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite ease-in-out;
+}
+
