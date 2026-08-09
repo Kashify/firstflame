@@ -251,10 +251,10 @@ function Home() {
         </div>
       </Section>
 
-      {/* Best sellers */}
+      {/* Our Masale Range */}
       <Section
-        eyebrow="Most Loved Harvests"
-        title="Best sellers this season"
+        eyebrow="OUR MASALE RANGE"
+        title="Pure Natural Authentic Taste — The 4 Core Spices"
         action={
           <Button asChild variant="ghost" className="rounded-full">
             <Link to="/shop">
@@ -264,7 +264,7 @@ function Home() {
         }
       >
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {bestSellers.slice(0, 4).map((p, i) => (
+          {products.map((p, i) => (
             <ProductCard key={p.slug} product={p} index={i} />
           ))}
         </div>
@@ -332,10 +332,10 @@ function Home() {
         </div>
       </section>
 
-      {/* New arrivals */}
-      <Section eyebrow="Just Milled" title="New arrivals from recent harvests">
+      {/* Freshly Ground & Sealed */}
+      <Section eyebrow="Freshly Ground & Sealed" title="Har Vyanjan Mein, Shuddhata Ka Vaada!">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {newArrivals.slice(0, 4).map((p, i) => (
+          {products.map((p, i) => (
             <ProductCard key={p.slug} product={p} index={i} />
           ))}
         </div>
