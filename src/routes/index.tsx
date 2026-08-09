@@ -143,16 +143,15 @@ function Home() {
             >
               <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs text-gold font-semibold tracking-wider uppercase mb-6 backdrop-blur">
                 <Sparkles className="h-3.5 w-3.5" />
-                <span>Est. 1974 · Jaipur Heritage Milling</span>
+                <span>Asli Masalon Ka Asli Swaad — FIRST FLAME</span>
               </div>
 
               <h1 className="font-display text-4xl leading-[1.08] text-[oklch(0.97_0.012_88)] sm:text-6xl lg:text-7xl font-light tracking-tight">
-                The spice your grandmother would recognise.
+                Purity, Freshness & Authentic Taste.
               </h1>
 
-              <p className="mt-6 max-w-lg text-base sm:text-lg leading-relaxed text-[oklch(0.9_0.012_88_/_0.85)] font-light">
-                Single-origin harvests from named Indian farms, stone-ground in small batches and
-                sealed within forty-eight hours. Nothing added, nothing hidden.
+              <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-[oklch(0.9_0.012_88_/_0.85)] font-light">
+                FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. Sourced with care, processed under hygienic standards, with zero artificial colours or preservatives.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
@@ -287,14 +286,12 @@ function Home() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="min-w-0"
           >
-            <p className="eyebrow text-gold font-semibold">Farm to Kitchen Traceability</p>
+            <p className="eyebrow text-gold font-semibold">Har Vyanjan Mein, Shuddhata Ka Vaada!</p>
             <h2 className="mt-2 font-display text-3xl md:text-4xl">
-              We know the farm. Often, we know the field.
+              Authentic Taste for Everyday Cooking & Healthy Living
             </h2>
             <p className="mt-5 leading-relaxed text-muted-foreground">
-              Our turmeric comes from eleven families in Erode. Our saffron from four growers in
-              Pampore. We pay above mandi rates, take the entire harvest, and put the village name
-              on the pack — because a spice is only as good as the soil it left.
+              FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. We focus on sourcing high-quality raw materials, processing them under hygienic standards, and providing natural products that enhance everyday cooking. With a dedication to quality and customer satisfaction, FIRST FLAME aims to become a trusted name in households and food markets.
             </p>
             <dl className="mt-8 grid grid-cols-3 gap-6">
               {[

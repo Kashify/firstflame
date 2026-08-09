@@ -134,8 +134,8 @@ export function SiteHeader() {
 
   return (
     <>
-      <div className="bg-primary py-2 text-center text-[12px] tracking-wide text-primary-foreground">
-        Free shipping across India on orders above ₹999 · Ground fresh, shipped within 48 hours
+      <div className="bg-primary py-2 text-center text-[12px] tracking-wide text-primary-foreground font-medium">
+        Asli Masalon Ka Asli Swaad, Har Rasoi Mein — FIRST FLAME · Free shipping across India above ₹999
       </div>
 
       <header

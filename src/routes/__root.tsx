@@ -89,21 +89,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "First Flames Spices — Premium Indian Spices, Masalas & Gift Boxes" },
+      { title: "FIRST FLAME — Premium Spices & Dry Fruits | Purity, Freshness & Authentic Taste" },
       {
         name: "description",
         content:
-          "Single-origin turmeric, Kashmiri chilli, stone-ground garam masala and curated gift boxes. Sourced from named Indian farms and packed within 48 hours.",
+          "FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. Processed under hygienic standards for healthy everyday cooking.",
       },
-      { name: "author", content: "First Flames Spices" },
-      { property: "og:site_name", content: "First Flames Spices" },
+      { name: "author", content: "FIRST FLAME" },
+      { property: "og:site_name", content: "FIRST FLAME" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#234B36" },
-      { property: "og:title", content: "First Flames Spices — Premium Indian Spices, Masalas & Gift Boxes" },
-      { name: "twitter:title", content: "First Flames Spices — Premium Indian Spices, Masalas & Gift Boxes" },
-      { property: "og:description", content: "Single-origin turmeric, Kashmiri chilli, stone-ground garam masala and curated gift boxes. Sourced from named Indian farms and packed within 48 hours." },
-      { name: "twitter:description", content: "Single-origin turmeric, Kashmiri chilli, stone-ground garam masala and curated gift boxes. Sourced from named Indian farms and packed within 48 hours." },
+      { property: "og:title", content: "FIRST FLAME — Premium Spices & Dry Fruits | Purity, Freshness & Authentic Taste" },
+      { name: "twitter:title", content: "FIRST FLAME — Premium Spices & Dry Fruits | Purity, Freshness & Authentic Taste" },
+      { property: "og:description", content: "FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. Processed under hygienic standards for healthy everyday cooking." },
+      { name: "twitter:description", content: "FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. Processed under hygienic standards for healthy everyday cooking." },
     ],
 
     links: [

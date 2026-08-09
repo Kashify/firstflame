@@ -11,11 +11,10 @@ export function SiteFooter() {
       <div className="container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
           <p className="font-display text-xl">
-            First Flames<span className="ml-1.5 text-accent">Spices</span>
+            FIRST FLAME<span className="ml-1.5 text-gold font-normal">MASALA & FOOD</span>
           </p>
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Sourced from named farms across India, stone-ground in small batches and packed within
-            48 hours. Since 1974.
+            FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste for healthy everyday cooking.
           </p>
           <div className="flex gap-2">
             {[Instagram, Facebook, Linkedin, Youtube].map((Icon, i) => (

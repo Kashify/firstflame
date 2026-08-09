@@ -111,13 +111,13 @@ interface Seed {
 }
 
 const seeds: Seed[] = [
-  // Ground spices
+  // Ground spices & Core Masale Range
+  { name: "Haldi Powder (Turmeric)", category: "ground-spices", origin: "Erode, Tamil Nadu", base: 65, note: "rich aroma, 100% pure haldi" },
+  { name: "Red Chilli Powder", category: "ground-spices", origin: "Guntur, Andhra Pradesh", base: 95, level: "Hot", note: "rich aroma, pure spice" },
+  { name: "Dhania Powder (Coriander)", category: "ground-spices", origin: "Kota, Rajasthan", base: 50, note: "fresh & aromatic pure coriander" },
+  { name: "Black Pepper Powder", category: "ground-spices", origin: "Idukki, Kerala", base: 180, level: "Medium", note: "pungent Malabar black pepper" },
   { name: "Wild Turmeric Powder", category: "ground-spices", origin: "Erode, Tamil Nadu", base: 180, note: "high curcumin, deep ochre colour" },
   { name: "Kashmiri Red Chilli Powder", category: "ground-spices", origin: "Kashmir Valley", base: 260, level: "Mild", note: "brilliant colour with gentle heat" },
-  { name: "Guntur Red Chilli Powder", category: "ground-spices", origin: "Guntur, Andhra Pradesh", base: 220, level: "Hot", note: "sharp, robust heat" },
-  { name: "Coriander Powder", category: "ground-spices", origin: "Kota, Rajasthan", base: 150, note: "sweet citrus aroma" },
-  { name: "Cumin Powder", category: "ground-spices", origin: "Unjha, Gujarat", base: 240, note: "warm and earthy" },
-  { name: "Black Pepper Powder", category: "ground-spices", origin: "Idukki, Kerala", base: 380, level: "Medium", note: "pungent Malabar pepper" },
   { name: "Dry Ginger Powder", category: "ground-spices", origin: "Kochi, Kerala", base: 210, note: "warming and resinous" },
   { name: "Fennel Powder", category: "ground-spices", origin: "Nagaur, Rajasthan", base: 190, note: "sweet anise finish" },
   { name: "Fenugreek Powder", category: "ground-spices", origin: "Nagaur, Rajasthan", base: 140, note: "bittersweet depth" },
@@ -390,10 +390,11 @@ function buildProduct(seed: Seed, index: number): Product {
   const organic = h % 3 === 0;
   const level = seed.level ?? "Mild";
 
-  const badges: string[] = [];
+  const badges: string[] = ["100% Natural"];
   if (organic) badges.push("Organic");
   if (seed.category === "blended-masalas") badges.push("House Blend");
   if (seed.origin.includes("Kashmir")) badges.push("Single Origin");
+  if (h % 2 === 0) badges.push("Hygienically Processed");
 
   return {
     id: `FFS-${String(index + 1).padStart(4, "0")}`,
