@@ -13,6 +13,8 @@ import { computeTotals, deliveryEstimate, inr } from "@/lib/format";
 import { useStore, type Address } from "@/lib/store";
 import { getPaymentProvider, type PaymentMethod } from "@/lib/payments";
 
+import logoImg from "@/assets/brand-logo.png";
+
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
@@ -141,7 +143,13 @@ function Checkout() {
 
   return (
     <div className="container-page py-12 md:py-16">
-      <h1 className="font-display text-3xl md:text-4xl">Checkout</h1>
+      <div className="flex items-center gap-4 mb-2">
+        <img src={logoImg} alt="FIRST FLAME" className="h-12 w-12 object-contain rounded-full border border-gold/40 shadow-soft" />
+        <div>
+          <h1 className="font-display text-2xl md:text-3xl font-bold">FIRST FLAME Checkout</h1>
+          <p className="text-xs text-muted-foreground">Har Vyanjan Mein, Shuddhata Ka Vaada!</p>
+        </div>
+      </div>
 
       <ol className="mt-6 flex flex-wrap items-center gap-3 text-sm">
         {steps.map((s, i) => (

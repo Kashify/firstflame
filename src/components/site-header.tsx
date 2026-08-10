@@ -10,6 +10,8 @@ import { inr } from "@/lib/format";
 import { useStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 
+import logoImg from "@/assets/brand-logo.png";
+
 const navLinks = [
   { to: "/shop", label: "Shop" },
   { to: "/about", label: "Our Story" },
@@ -184,10 +186,11 @@ export function SiteHeader() {
             </Sheet>
           </div>
 
-          <Link to="/" className="hidden min-w-0 items-center md:flex">
-            <span className="font-display text-xl leading-none tracking-tight">
-              First Flames
-              <span className="ml-1.5 text-accent">Spices</span>
+          <Link to="/" className="flex items-center gap-3 shrink-0">
+            <img src={logoImg} alt="FIRST FLAME" className="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-full border border-gold/40 shadow-soft transition-transform hover:scale-105" />
+            <span className="font-display text-lg sm:text-xl leading-none tracking-tight flex flex-col justify-center">
+              <span className="font-bold text-foreground">FIRST FLAME</span>
+              <span className="text-[10px] tracking-widest text-gold uppercase font-semibold mt-1">MASALA & FOOD</span>
             </span>
           </Link>
 

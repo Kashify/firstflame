@@ -3,16 +3,20 @@ import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { categories } from "@/lib/catalog";
+import logoImg from "@/assets/brand-logo.png";
 
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border bg-surface">
       <div className="container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
-          <p className="font-display text-xl">
-            FIRST FLAME<span className="ml-1.5 text-gold font-normal">MASALA & FOOD</span>
-          </p>
+          <div className="flex items-center gap-3">
+            <img src={logoImg} alt="FIRST FLAME" className="h-12 w-12 object-contain rounded-full border border-gold/40 shadow-soft" />
+            <div>
+              <p className="font-display text-lg font-bold text-foreground leading-none">FIRST FLAME</p>
+              <p className="text-[10px] tracking-widest text-gold uppercase font-semibold mt-1">MASALA & FOOD</p>
+            </div>
+          </div>
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
             FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste for healthy everyday cooking.
           </p>

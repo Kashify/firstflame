@@ -5,6 +5,7 @@ import { ShieldCheck, Sparkles, HeartHandshake, Leaf, Award, CheckCircle2 } from
 import farmImg from "@/assets/story-farm.jpg";
 import grindImg from "@/assets/story-grind.jpg";
 import heroImg from "@/assets/hero-spices.jpg";
+import logoImg from "@/assets/brand-logo.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -69,7 +70,9 @@ export function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
+            className="flex flex-col items-center"
           >
+            <img src={logoImg} alt="FIRST FLAME Seal of Purity" className="h-28 w-28 sm:h-36 sm:w-36 object-contain mb-4 filter drop-shadow-lg" />
             <span className="eyebrow inline-block rounded-full bg-gold/20 px-4 py-1.5 text-gold border border-gold/30 backdrop-blur font-medium">
               Har Swad Mein, Pehla Sa Pyar — FIRST FLAME
             </span>
