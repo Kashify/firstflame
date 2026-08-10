@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Leaf, ShieldCheck, Sprout, Star, Truck, Sparkles, Compass, Box } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/product-card";
-import { bestSellers, categories, newArrivals } from "@/lib/catalog";
+import { bestSellers, categories, newArrivals, products } from "@/lib/catalog";
 import heroImg from "@/assets/hero-spices.jpg";
 import farmImg from "@/assets/story-farm.jpg";
 import grindImg from "@/assets/story-grind.jpg";
