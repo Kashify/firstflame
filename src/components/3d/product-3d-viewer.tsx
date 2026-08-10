@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Float, ContactShadows, Text } from "@react-three/drei";
 import * as THREE from "three";
@@ -65,7 +65,7 @@ function PrecisionSpiceJar({ productName, categoryName, primaryColor = "#C94A29"
         anchorX="center"
         anchorY="middle"
       >
-        FIRST FLAMES SPICES
+        FIRST FLAME MASALA
       </Text>
 
       <Text
@@ -102,7 +102,20 @@ function PrecisionSpiceJar({ productName, categoryName, primaryColor = "#C94A29"
 }
 
 export default function Product3DViewer({ productName, categoryName, primaryColor = "#C94A29" }: Product3DViewerProps) {
+  const [mounted, setMounted] = useState(false);
   const [autoRotate, setAutoRotate] = useState(true);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="relative h-[420px] w-full rounded-3xl border border-border bg-surface flex items-center justify-center p-4">
+        <span className="eyebrow text-gold font-semibold">Loading 3D Inspector...</span>
+      </div>
+    );
+  }
 
   return (
     <div className="relative h-[420px] w-full rounded-3xl border border-border bg-gradient-to-b from-surface via-background to-surface p-4 overflow-hidden shadow-soft">

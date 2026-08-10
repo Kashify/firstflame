@@ -41,10 +41,12 @@ function PureGlitterScene({ mouse }: { mouse: React.RefObject<{ x: number; y: nu
 }
 
 export default function SpiceHeroCanvas() {
+  const [mounted, setMounted] = useState(false);
   const [hasWebGL, setHasWebGL] = useState(true);
   const mouse = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
+    setMounted(true);
     try {
       const canvas = document.createElement("canvas");
       const isSupported = !!(
@@ -64,7 +66,8 @@ export default function SpiceHeroCanvas() {
     mouse.current = { x, y };
   };
 
-  if (!hasWebGL) {
+  // Safe SSR Fallback (prevents Node.js server crashes during initial SSR)
+  if (!mounted || !hasWebGL) {
     return null;
   }
 

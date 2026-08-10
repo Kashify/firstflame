@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Sparkles, Float, Text } from "@react-three/drei";
 import * as THREE from "three";
@@ -71,8 +71,13 @@ function StoneGrinderMesh({ isGrinding }: { isGrinding: boolean }) {
 }
 
 export default function SpiceGrinderInteractive() {
+  const [mounted, setMounted] = useState(false);
   const [isGrinding, setIsGrinding] = useState(false);
   const [grindCount, setGrindCount] = useState(0);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleStartGrind = () => {
     setIsGrinding(true);
@@ -93,7 +98,7 @@ export default function SpiceGrinderInteractive() {
           Stone-Ground at Low Speeds to Retain Volatile Essential Oils
         </h3>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Industrial steel rollers burn off essential aroma oils at 120°C. We use Jaipur granite stone mills operating under 40 RPM to preserve volatile terpenes, vibrant natural color, and ancestral aroma.
+          Industrial steel rollers burn off essential aroma oils at 120°C. We use granite stone mills operating under 40 RPM to preserve volatile terpenes, vibrant natural color, and ancestral aroma.
         </p>
 
         <div className="pt-2 flex flex-wrap items-center gap-4">
@@ -120,12 +125,14 @@ export default function SpiceGrinderInteractive() {
             Granite Stone Mill • 38 RPM
           </span>
         </div>
-        <Canvas camera={{ position: [0, 1.8, 3.5], fov: 45 }}>
-          <ambientLight intensity={0.9} />
-          <directionalLight position={[3, 5, 3]} intensity={1.6} color="#FFF3E0" />
-          <pointLight position={[-2, 1, 2]} intensity={0.8} color="#FF9800" />
-          <StoneGrinderMesh isGrinding={isGrinding} />
-        </Canvas>
+        {mounted && (
+          <Canvas camera={{ position: [0, 1.8, 3.5], fov: 45 }}>
+            <ambientLight intensity={0.9} />
+            <directionalLight position={[3, 5, 3]} intensity={1.6} color="#FFF3E0" />
+            <pointLight position={[-2, 1, 2]} intensity={0.8} color="#FF9800" />
+            <StoneGrinderMesh isGrinding={isGrinding} />
+          </Canvas>
+        )}
       </div>
     </div>
   );
