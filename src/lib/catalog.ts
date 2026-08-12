@@ -3,6 +3,11 @@ import wholeImg from "@/assets/p-whole.jpg";
 import blendImg from "@/assets/p-blend.jpg";
 import dryfruitsImg from "@/assets/p-dryfruits.jpg";
 
+import chilliImg from "@/assets/products/red-chilli-powder.jpg";
+import dhaniaImg from "@/assets/products/dhania-powder.jpg";
+import pepperImg from "@/assets/products/black-pepper-powder.jpg";
+import haldiImg from "@/assets/products/haldi-powder.jpg";
+
 export type CategorySlug =
   | "ground-spices"
   | "whole-spices"
@@ -115,7 +120,7 @@ export const products: Product[] = [
       { label: "Total Fat", value: "17.8 g" },
       { label: "Dietary Fibre", value: "41.9 g" },
     ],
-    images: [groundImg, groundImg],
+    images: [dhaniaImg, dhaniaImg],
     badges: ["100% Natural", "Pure & Wholesome", "Traditional Taste"],
     bestSeller: true,
     newArrival: true,
@@ -154,7 +159,7 @@ export const products: Product[] = [
       { label: "Total Fat", value: "3.2 g" },
       { label: "Curcumin Content", value: "High Grade (3.5%+)" },
     ],
-    images: [groundImg, groundImg],
+    images: [haldiImg, haldiImg],
     badges: ["100% Natural", "Pure & Wholesome", "No Artificial Colours"],
     bestSeller: true,
     newArrival: true,
@@ -193,7 +198,7 @@ export const products: Product[] = [
       { label: "Total Fat", value: "6.2 g" },
       { label: "Vitamin C", value: "Rich Source" },
     ],
-    images: [groundImg, groundImg],
+    images: [chilliImg, chilliImg],
     badges: ["100% Natural", "Pure & Wholesome", "No Preservatives"],
     bestSeller: true,
     newArrival: true,
@@ -232,7 +237,7 @@ export const products: Product[] = [
       { label: "Total Fat", value: "3.3 g" },
       { label: "Piperine Value", value: "High Grade" },
     ],
-    images: [groundImg, groundImg],
+    images: [pepperImg, pepperImg],
     badges: ["100% Natural", "Pure & Wholesome", "Fresh & Aromatic"],
     bestSeller: true,
     newArrival: true,
