@@ -8,6 +8,12 @@ import { products } from "@/lib/catalog";
 import heroImg from "@/assets/hero-spices.jpg";
 import farmImg from "@/assets/story-farm.jpg";
 import grindImg from "@/assets/story-grind.jpg";
+import brandLogo from "@/assets/brand-logo.png";
+import chilliImg from "@/assets/products/red-chilli-powder.jpg";
+import dhaniaImg from "@/assets/products/dhania-powder.jpg";
+import pepperImg from "@/assets/products/black-pepper-powder.jpg";
+import haldiImg from "@/assets/products/haldi-powder.jpg";
+
 import {
   Accordion,
   AccordionContent,
@@ -91,7 +97,7 @@ function Home() {
 
   return (
     <>
-      {/* Hero Section with Layered 3D Atmosphere */}
+      {/* Hero Section with Layered 3D Particle Atmosphere & Official Product Pouch Showcase */}
       <section className="relative min-h-[85vh] overflow-hidden bg-[#0F1E16] text-[oklch(0.97_0.012_88)]">
         <div className="absolute inset-0 z-0 opacity-40">
           <img
@@ -107,56 +113,154 @@ function Home() {
           <SpiceHeroCanvas />
         </Suspense>
 
-        {/* Hero Editorial Content Overlay */}
+        {/* Hero Content Overlay: Left Headlines + Right Official FIRST FLAME Pouches Showcase */}
         <div className="container-page relative z-20 flex min-h-[85vh] items-center py-16 md:py-20">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs text-gold font-semibold tracking-wider uppercase mb-6 backdrop-blur">
-                <Sparkles className="h-3.5 w-3.5" />
-                <span>Asli Masalon Ka Asli Swaad — FIRST FLAME</span>
-              </div>
+          <div className="grid w-full items-center gap-12 lg:grid-cols-12">
+            {/* Left Copy Column */}
+            <div className="lg:col-span-7">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs text-gold font-semibold tracking-wider uppercase mb-6 backdrop-blur">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  <span>Asli Masalon Ka Asli Swaad — FIRST FLAME</span>
+                </div>
 
-              <h1 className="font-display text-4xl leading-[1.08] text-[oklch(0.97_0.012_88)] sm:text-6xl lg:text-7xl font-light tracking-tight">
-                Purity, Freshness & Authentic Taste.
-              </h1>
+                <h1 className="font-display text-4xl leading-[1.08] text-[oklch(0.97_0.012_88)] sm:text-6xl lg:text-7xl font-light tracking-tight">
+                  Purity, Freshness & Authentic Taste.
+                </h1>
 
-              <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-[oklch(0.9_0.012_88_/_0.85)] font-light">
-                FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste for healthy everyday cooking.
-              </p>
+                <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-[oklch(0.9_0.012_88_/_0.85)] font-light">
+                  FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste for healthy everyday cooking.
+                </p>
 
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Button asChild size="lg" className="rounded-full px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-medium text-sm gold-border-glow shadow-lift">
-                  <Link to="/shop">
-                    Explore Collection
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  onClick={() => setQuizOpen(true)}
-                  className="rounded-full border-gold/30 bg-surface/20 px-8 text-[oklch(0.97_0.012_88)] hover:bg-surface/40 backdrop-blur"
-                >
-                  <Compass className="mr-2 h-4 w-4 text-gold" />
-                  Find My Spice
-                </Button>
-              </div>
+                <div className="mt-10 flex flex-wrap gap-4">
+                  <Button asChild size="lg" className="rounded-full px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-medium text-sm gold-border-glow shadow-lift">
+                    <Link to="/shop">
+                      Explore Collection
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    onClick={() => setQuizOpen(true)}
+                    className="rounded-full border-gold/30 bg-surface/20 px-8 text-[oklch(0.97_0.012_88)] hover:bg-surface/40 backdrop-blur"
+                  >
+                    <Compass className="mr-2 h-4 w-4 text-gold" />
+                    Find My Spice
+                  </Button>
+                </div>
 
-              <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-[oklch(0.9_0.012_88_/_0.75)] border-t border-[oklch(1_0_0_/_0.12)] pt-6">
-                <span className="flex items-center gap-2 font-medium text-[oklch(0.97_0.012_88)]">
-                  <Star className="h-4 w-4 fill-gold text-gold" />
-                  4.9 / 5 Customer Rating
-                </span>
-                <span>•</span>
-                <span>400+ Kitchen Accounts</span>
-                <span>•</span>
-                <span>100% Natural & Wholesome</span>
-              </div>
-            </motion.div>
+                <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-[oklch(0.9_0.012_88_/_0.75)] border-t border-[oklch(1_0_0_/_0.12)] pt-6">
+                  <span className="flex items-center gap-2 font-medium text-[oklch(0.97_0.012_88)]">
+                    <Star className="h-4 w-4 fill-gold text-gold" />
+                    4.9 / 5 Customer Rating
+                  </span>
+                  <span>•</span>
+                  <span>400+ Kitchen Accounts</span>
+                  <span>•</span>
+                  <span>100% Natural & Wholesome</span>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right Column: Official FIRST FLAME Pouch & Emblem Showcase */}
+            <div className="hidden lg:col-span-5 lg:block">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.92, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                className="relative mx-auto flex max-w-md flex-col items-center justify-center text-center"
+              >
+                {/* Glow Halo behind center seal */}
+                <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-tr from-gold/30 via-emerald-500/20 to-amber-500/10 blur-3xl opacity-70" />
+
+                {/* Floating Composite Grid of Official Pouches around the Logo Seal */}
+                <div className="relative grid grid-cols-2 gap-3.5 p-2">
+                  {/* Pouch 1: Red Chilli */}
+                  <motion.div
+                    whileHover={{ y: -5, rotate: -2, scale: 1.04 }}
+                    className="group relative overflow-hidden rounded-2xl border border-gold/30 bg-[#0F1E16]/85 p-2 shadow-2xl backdrop-blur"
+                  >
+                    <img
+                      src={chilliImg}
+                      alt="FIRST FLAME Red Chilli Powder Pouch"
+                      className="h-40 w-full rounded-xl object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="p-1.5 text-center">
+                      <p className="font-display text-xs font-semibold text-gold">RED CHILLI</p>
+                      <p className="text-[10px] text-[oklch(0.85_0.012_88)]">100g • ₹95</p>
+                    </div>
+                  </motion.div>
+
+                  {/* Pouch 2: Haldi */}
+                  <motion.div
+                    whileHover={{ y: -5, rotate: 2, scale: 1.04 }}
+                    className="group relative overflow-hidden rounded-2xl border border-gold/30 bg-[#0F1E16]/85 p-2 shadow-2xl backdrop-blur"
+                  >
+                    <img
+                      src={haldiImg}
+                      alt="FIRST FLAME Haldi Powder Pouch"
+                      className="h-40 w-full rounded-xl object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="p-1.5 text-center">
+                      <p className="font-display text-xs font-semibold text-gold">HALDI POWDER</p>
+                      <p className="text-[10px] text-[oklch(0.85_0.012_88)]">100g • ₹65</p>
+                    </div>
+                  </motion.div>
+
+                  {/* Center Official Brand Seal Emblem Badge */}
+                  <div className="col-span-2 relative my-0.5 flex items-center justify-center">
+                    <div className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+                    <motion.div
+                      whileHover={{ scale: 1.08 }}
+                      className="relative z-10 flex items-center gap-3 rounded-full border border-gold/60 bg-[#0F1E16]/95 px-5 py-2 shadow-2xl backdrop-blur"
+                    >
+                      <img src={brandLogo} alt="FIRST FLAME Seal Logo" className="h-8 w-8 rounded-full object-contain" />
+                      <div className="text-left">
+                        <p className="font-display text-xs font-bold text-gold tracking-wide">TRADITIONAL TASTE</p>
+                        <p className="text-[10px] text-emerald-400 font-medium">100% Natural • Pure & Wholesome</p>
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  {/* Pouch 3: Dhania */}
+                  <motion.div
+                    whileHover={{ y: -5, rotate: -2, scale: 1.04 }}
+                    className="group relative overflow-hidden rounded-2xl border border-gold/30 bg-[#0F1E16]/85 p-2 shadow-2xl backdrop-blur"
+                  >
+                    <img
+                      src={dhaniaImg}
+                      alt="FIRST FLAME Dhania Powder Pouch"
+                      className="h-40 w-full rounded-xl object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="p-1.5 text-center">
+                      <p className="font-display text-xs font-semibold text-gold">DHANIA POWDER</p>
+                      <p className="text-[10px] text-[oklch(0.85_0.012_88)]">80g • ₹50</p>
+                    </div>
+                  </motion.div>
+
+                  {/* Pouch 4: Black Pepper */}
+                  <motion.div
+                    whileHover={{ y: -5, rotate: 2, scale: 1.04 }}
+                    className="group relative overflow-hidden rounded-2xl border border-gold/30 bg-[#0F1E16]/85 p-2 shadow-2xl backdrop-blur"
+                  >
+                    <img
+                      src={pepperImg}
+                      alt="FIRST FLAME Black Pepper Powder Pouch"
+                      className="h-40 w-full rounded-xl object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="p-1.5 text-center">
+                      <p className="font-display text-xs font-semibold text-gold">BLACK PEPPER</p>
+                      <p className="text-[10px] text-[oklch(0.85_0.012_88)]">100g • ₹180</p>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
