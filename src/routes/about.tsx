@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Sparkles, HeartHandshake, Leaf, Award, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Sparkles, HeartHandshake, Leaf, CheckCircle2 } from "lucide-react";
 import farmImg from "@/assets/story-farm.jpg";
 import grindImg from "@/assets/story-grind.jpg";
 import heroImg from "@/assets/hero-spices.jpg";
@@ -14,13 +14,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. Sourced with care, processed under hygienic standards, with no artificial colours or preservatives.",
+          "At First Flame, we believe that exceptional taste begins with uncompromising purity. Every spice and every ingredient is carefully selected to bring you authentic flavour, rich aroma, and premium quality.",
       },
       { property: "og:title", content: "About Us | FIRST FLAME" },
       {
         property: "og:description",
         content:
-          "FIRST FLAME is committed to delivering purity, freshness, and authentic taste. Premium spices and dry fruits for healthy everyday cooking.",
+          "Because when it comes to your family and your food, purity isn’t a choice — it’s a promise. First Flame — Har Vyanjan Mein Shudhta Ka Wada.",
       },
     ],
   }),
@@ -49,7 +49,7 @@ const pillars = [
   {
     icon: Sparkles,
     title: "Authentic Taste & Aroma",
-    desc: "Har Vyanjan Mein, Shuddhata Ka Vaada — rich aroma and traditional flavor that enhances everyday healthy living.",
+    desc: "Har Vyanjan Mein, Shudhta Ka Wada — rich aroma and traditional flavor that enhances everyday healthy living.",
   },
   {
     icon: HeartHandshake,
@@ -86,7 +86,48 @@ export function About() {
         </div>
       </section>
 
-      {/* Official Client Brand Introduction Section */}
+      {/* Official Client Text Passage 2: Editorial Brand Manifesto */}
+      <section className="bg-primary text-primary-foreground py-20 md:py-28 border-b border-border relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent pointer-events-none" />
+        <div className="container-page relative z-10 max-w-4xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-5 py-2 text-xs text-gold font-bold tracking-widest uppercase">
+              <Sparkles className="h-4 w-4" />
+              <span>THE FIRST FLAME PROMISE</span>
+            </div>
+
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light leading-snug text-gold">
+              At First Flame, we believe that exceptional taste begins with uncompromising purity.
+            </h2>
+
+            <div className="space-y-6 text-base sm:text-lg md:text-xl font-light leading-relaxed text-[oklch(0.92_0.012_88_/_0.95)] max-w-3xl mx-auto">
+              <p>
+                Every spice and every ingredient is carefully selected to bring you authentic flavour, rich aroma, and premium quality.
+              </p>
+              <p>
+                Rooted in the timeless traditions of Indian kitchens, First Flame brings together the goodness of carefully chosen ingredients with the standards of modern quality.
+              </p>
+              <p className="font-medium text-white text-xl sm:text-2xl pt-2">
+                Because when it comes to your family and your food, purity isn’t a choice — it’s a promise.
+              </p>
+            </div>
+
+            <div className="pt-8 border-t border-[oklch(1_0_0_/_0.15)] max-w-md mx-auto">
+              <p className="font-display text-2xl sm:text-3xl text-gold font-semibold tracking-wide">
+                First Flame — Har Vyanjan Mein Shudhta Ka Wada.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Official Client Brand Overview Section */}
       <section className="container-page py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <motion.div
@@ -162,7 +203,7 @@ export function About() {
           <div className="text-center max-w-2xl mx-auto mb-14">
             <p className="eyebrow text-gold font-semibold">Why Choose FIRST FLAME</p>
             <h2 className="mt-2 font-display text-3xl md:text-4xl">Our Promise of Uncompromised Quality</h2>
-            <p className="mt-3 text-sm text-muted-foreground">Har Vyanjan mein, Shuddhata ka Vaada!</p>
+            <p className="mt-3 text-sm text-muted-foreground">Har Vyanjan mein, Shudhta ka Vaada!</p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

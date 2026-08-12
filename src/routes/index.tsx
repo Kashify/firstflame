@@ -113,7 +113,7 @@ function Home() {
           <SpiceHeroCanvas />
         </Suspense>
 
-        {/* Hero Content Overlay: Left Headlines + Right Official FIRST FLAME Pouches Showcase */}
+        {/* Hero Content Overlay */}
         <div className="container-page relative z-20 flex min-h-[85vh] items-center py-16 md:py-20">
           <div className="grid w-full items-center gap-12 lg:grid-cols-12">
             {/* Left Copy Column */}
@@ -175,12 +175,9 @@ function Home() {
                 transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="relative mx-auto flex max-w-md flex-col items-center justify-center text-center"
               >
-                {/* Glow Halo behind center seal */}
                 <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-tr from-gold/30 via-emerald-500/20 to-amber-500/10 blur-3xl opacity-70" />
 
-                {/* Floating Composite Grid of Official Pouches around the Logo Seal */}
                 <div className="relative grid grid-cols-2 gap-3.5 p-2">
-                  {/* Pouch 1: Red Chilli */}
                   <motion.div
                     whileHover={{ y: -5, rotate: -2, scale: 1.04 }}
                     className="group relative overflow-hidden rounded-2xl border border-gold/30 bg-[#0F1E16]/85 p-2 shadow-2xl backdrop-blur"
@@ -196,7 +193,6 @@ function Home() {
                     </div>
                   </motion.div>
 
-                  {/* Pouch 2: Haldi */}
                   <motion.div
                     whileHover={{ y: -5, rotate: 2, scale: 1.04 }}
                     className="group relative overflow-hidden rounded-2xl border border-gold/30 bg-[#0F1E16]/85 p-2 shadow-2xl backdrop-blur"
@@ -212,7 +208,6 @@ function Home() {
                     </div>
                   </motion.div>
 
-                  {/* Center Official Brand Seal Emblem Badge */}
                   <div className="col-span-2 relative my-0.5 flex items-center justify-center">
                     <div className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
                     <motion.div
@@ -227,7 +222,6 @@ function Home() {
                     </motion.div>
                   </div>
 
-                  {/* Pouch 3: Dhania */}
                   <motion.div
                     whileHover={{ y: -5, rotate: -2, scale: 1.04 }}
                     className="group relative overflow-hidden rounded-2xl border border-gold/30 bg-[#0F1E16]/85 p-2 shadow-2xl backdrop-blur"
@@ -243,7 +237,6 @@ function Home() {
                     </div>
                   </motion.div>
 
-                  {/* Pouch 4: Black Pepper */}
                   <motion.div
                     whileHover={{ y: -5, rotate: 2, scale: 1.04 }}
                     className="group relative overflow-hidden rounded-2xl border border-gold/30 bg-[#0F1E16]/85 p-2 shadow-2xl backdrop-blur"
@@ -313,7 +306,7 @@ function Home() {
         </Suspense>
       </div>
 
-      {/* Farm to kitchen Story & Brand Commitments */}
+      {/* Official Client Text Passage 1: Corporate & Operational Brand Overview */}
       <section className="bg-surface py-16 md:py-24 border-y border-border">
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <motion.div
@@ -326,8 +319,8 @@ function Home() {
             <h2 className="font-display text-3xl md:text-4xl leading-tight">
               Authentic Taste for Everyday Cooking & Healthy Living
             </h2>
-            <p className="mt-5 leading-relaxed text-muted-foreground">
-              FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. We focus on sourcing high-quality raw materials, processing them under hygienic standards, and providing natural products that enhance everyday cooking. With a dedication to quality and customer satisfaction, FIRST FLAME aims to become a trusted name in households and food markets.
+            <p className="mt-5 leading-relaxed text-muted-foreground text-base">
+              FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. The company focuses on sourcing high-quality raw materials, processing them under hygienic standards, and providing natural products that enhance everyday cooking and healthy living. With a dedication to quality and customer satisfaction, the brand aims to become a trusted name in households and food markets.
             </p>
             <dl className="mt-8 grid grid-cols-3 gap-6 border-t border-border pt-6">
               {[
