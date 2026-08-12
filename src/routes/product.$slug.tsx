@@ -17,21 +17,20 @@ import { StickyAddToCart } from "@/components/sticky-add-to-cart";
 const Product3DViewer = lazy(() => import("@/components/3d/product-3d-viewer"));
 
 export const Route = createFileRoute("/product/$slug")({
-  loader: ({ params }): { product: Product } => {
+  loader: ({ params }): { product?: Product } => {
     const product = productBySlug(params.slug);
-    if (!product) throw notFound();
     return { product };
   },
   head: ({ loaderData }) => {
-    if (!loaderData)
+    if (!loaderData || !loaderData.product)
       return {
         meta: [
-          { title: "Product not found | First Flames Spices" },
+          { title: "Product not found | FIRST FLAME" },
           { name: "robots", content: "noindex" },
         ],
       };
     const p = loaderData.product;
-    const title = `${p.name} — ${p.origin} | First Flames Spices`;
+    const title = `${p.name} — ${p.origin} | FIRST FLAME`;
     const description = `${p.shortDescription} ${p.weight} from ${p.origin}. ${inr(p.price)}, rated ${p.rating}/5 by ${p.reviewCount} customers.`;
 
     const jsonLd = {
@@ -41,7 +40,7 @@ export const Route = createFileRoute("/product/$slug")({
       image: p.images,
       description: p.description,
       sku: p.id,
-      brand: { "@type": "Brand", name: "First Flames Spices" },
+      brand: { "@type": "Brand", name: "FIRST FLAME" },
       offers: {
         "@type": "Offer",
         priceCurrency: "INR",
@@ -75,11 +74,14 @@ export const Route = createFileRoute("/product/$slug")({
 });
 
 function ProductPage() {
-  const { product } = Route.useLoaderData() as { product: Product };
+  const params = Route.useParams();
+  const loaderData = Route.useLoaderData();
+  const product = loaderData?.product || productBySlug(params.slug);
+
   const navigate = useNavigate();
   const { addToCart, toggleWishlist, isWishlisted, viewProduct, recentlyViewed, setCartOpen } =
     useStore();
-  const [weight, setWeight] = useState(product.weight);
+  const [weight, setWeight] = useState(product?.weight || "100 g");
   const [qty, setQty] = useState(1);
   const [pincode, setPincode] = useState("");
   const [eta, setEta] = useState<string | null>(null);
@@ -87,11 +89,25 @@ function ProductPage() {
   const [mediaView, setMediaView] = useState<"2d" | "3d">("2d");
 
   useEffect(() => {
-    viewProduct(product.slug);
-    setActiveImage(0);
-    setWeight(product.weight);
-    setQty(1);
-  }, [product.slug, product.weight, viewProduct]);
+    if (product) {
+      viewProduct(product.slug);
+      setActiveImage(0);
+      setWeight(product.weight);
+      setQty(1);
+    }
+  }, [product?.slug, product?.weight, viewProduct]);
+
+  if (!product) {
+    return (
+      <div className="container-page py-20 text-center">
+        <h1 className="font-display text-3xl font-bold">Product Not Found</h1>
+        <p className="mt-4 text-muted-foreground">The requested spice product could not be found.</p>
+        <Button asChild className="mt-6 rounded-full">
+          <Link to="/shop">Explore Collection</Link>
+        </Button>
+      </div>
+    );
+  }
 
   const unit = lineUnitPrice(product, weight);
   const mrpForWeight = Math.round((unit / (100 - product.discount)) * 100);

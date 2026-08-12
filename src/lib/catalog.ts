@@ -244,8 +244,11 @@ export const products: Product[] = [
   },
 ];
 
-export const productBySlug = (slug: string): Product | undefined =>
-  products.find((p) => p.slug === slug);
+export const productBySlug = (slug: string): Product | undefined => {
+  if (!slug) return undefined;
+  const s = slug.toLowerCase().trim();
+  return products.find((p) => p.slug.toLowerCase() === s);
+};
 
 export const productsByCategory = (slug: CategorySlug): Product[] => {
   const filtered = products.filter((p) => p.category === slug);
@@ -267,7 +270,8 @@ export function searchProducts(query: string): Product[] {
   );
 }
 
-export function relatedProducts(product: Product, count = 4): Product[] {
+export function relatedProducts(product?: Product, count = 4): Product[] {
+  if (!product) return products.slice(0, count);
   return products.filter((p) => p.slug !== product.slug).slice(0, count);
 }
 
