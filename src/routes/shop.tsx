@@ -5,16 +5,16 @@ import { products } from "@/lib/catalog";
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Shop All Spices, Masalas & Gift Boxes | First Flames Spices" },
+      { title: "Shop — FIRST FLAME | Pure Spices & Masale Range" },
       {
         name: "description",
         content:
-          "Browse our complete collection of single-origin Indian spices, stone-ground masalas and luxury gift boxes. Ground to order in Jaipur.",
+          "Browse the official FIRST FLAME collection of pure spices and masale. Red Chilli Powder, Haldi Powder, Dhania Powder, and Black Pepper Powder.",
       },
-      { property: "og:title", content: "Shop All Spices & Masalas | First Flames Spices" },
+      { property: "og:title", content: "Shop | FIRST FLAME" },
       {
         property: "og:description",
-        content: "Single-origin ground spices, whole spices, masalas, herbs and gift boxes.",
+        content: "100% natural, hygienically processed pure spices with no added colours or preservatives.",
       },
     ],
   }),
@@ -25,11 +25,10 @@ function Shop() {
   return (
     <div className="container-page py-12 md:py-16">
       <header className="mb-10 max-w-2xl">
-        <p className="eyebrow text-accent">The full pantry</p>
-        <h1 className="mt-2 font-display text-4xl md:text-5xl">Shop all products</h1>
+        <p className="eyebrow text-gold font-semibold">OUR MASALE RANGE</p>
+        <h1 className="mt-2 font-display text-4xl md:text-5xl">FIRST FLAME Collection</h1>
         <p className="mt-4 leading-relaxed text-muted-foreground">
-          {products.length} spices, masalas and kitchen essentials — each traceable to a farm, a
-          harvest and a milling date.
+          Explore our signature {products.length} pure spices — Red Chilli, Haldi, Dhania, and Black Pepper. 100% natural, hygienically processed under strict quality standards with zero artificial colours or preservatives.
         </p>
       </header>
       <ShopBrowser source={products} />

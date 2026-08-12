@@ -1,10 +1,10 @@
 import { useState, lazy, Suspense } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { ArrowRight, Leaf, ShieldCheck, Sprout, Star, Truck, Sparkles, Compass, Box } from "lucide-react";
+import { ArrowRight, Leaf, ShieldCheck, Sprout, Star, Truck, Sparkles, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/product-card";
-import { bestSellers, categories, newArrivals, products } from "@/lib/catalog";
+import { products } from "@/lib/catalog";
 import heroImg from "@/assets/hero-spices.jpg";
 import farmImg from "@/assets/story-farm.jpg";
 import grindImg from "@/assets/story-grind.jpg";
@@ -22,17 +22,17 @@ const SpiceGrinderInteractive = lazy(() => import("@/components/3d/spice-grinder
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "First Flames Spices — Luxury Single-Origin Indian Spices & Masalas" },
+      { title: "FIRST FLAME — Premium Spices & Dry Fruits | Purity, Freshness & Authentic Taste" },
       {
         name: "description",
         content:
-          "Single-origin turmeric, Kashmiri chilli, stone-ground garam masala and gift boxes. Sourced from named Indian farms and ground to order within 48 hours.",
+          "FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. Processed under hygienic standards for healthy everyday cooking.",
       },
-      { property: "og:title", content: "First Flames Spices — Luxury Single-Origin Indian Spices & Masalas" },
+      { property: "og:title", content: "FIRST FLAME — Premium Spices & Dry Fruits | Purity, Freshness & Authentic Taste" },
       {
         property: "og:description",
         content:
-          "Single-origin turmeric, Kashmiri chilli, stone-ground garam masala and gift boxes. Sourced from named Indian farms and ground to order within 48 hours.",
+          "FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. Processed under hygienic standards for healthy everyday cooking.",
       },
     ],
   }),
@@ -70,55 +70,29 @@ const testimonials = [
 const faqs = [
   {
     q: "How fresh are the spices when they arrive?",
-    a: "We grind and pack to order. Every jar leaves our Jaipur facility within 48 hours of milling, and we print the milling date — not just the expiry — on every pack.",
+    a: "We grind and pack to order. Every pack leaves our facility within 48 hours of milling, and we print the milling date — not just the expiry — on every pack.",
   },
   {
-    q: "Do you use any colour, fillers or anti-caking agents?",
-    a: "No. Our Kashmiri chilli gets its colour from the chilli itself, which is why the shade varies slightly between harvests. That variation is the proof.",
+    q: "Do you use any artificial colours, fillers or preservatives?",
+    a: "No. FIRST FLAME products are 100% natural with zero artificial colours, zero preservatives, and zero anti-caking additives.",
   },
   {
-    q: "Do you supply restaurants and hotels?",
-    a: "Yes. We supply over 400 kitchens across India in 1 kg and 5 kg packs with monthly invoicing. Write to us and our wholesale team will set up an account.",
+    q: "Do you supply restaurants and hotel kitchens?",
+    a: "Yes. We supply over 400 professional kitchens across India in bulk packaging with custom invoice billing. Contact us for commercial pricing.",
   },
   {
-    q: "What is your return policy?",
-    a: "If a pack arrives damaged or the aroma is not what you expected, tell us within 7 days and we will replace it or refund you in full. No return shipping required.",
+    q: "What is your satisfaction guarantee?",
+    a: "If a pack arrives damaged or the aroma is not what you expected, contact us within 7 days for an immediate replacement or full refund.",
   },
 ];
-
-function Section({
-  eyebrow,
-  title,
-  children,
-  action,
-}: {
-  eyebrow: string;
-  title: string;
-  children: React.ReactNode;
-  action?: React.ReactNode;
-}) {
-  return (
-    <section className="container-page py-16 md:py-24">
-      <div className="mb-10 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
-        <div className="min-w-0">
-          <p className="eyebrow text-gold font-semibold">{eyebrow}</p>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl">{title}</h2>
-        </div>
-        {action}
-      </div>
-      {children}
-    </section>
-  );
-}
 
 function Home() {
   const [quizOpen, setQuizOpen] = useState(false);
 
   return (
     <>
-      {/* Opulent Editorial Hero Section with Layered 3D Atmosphere */}
+      {/* Hero Section with Layered 3D Atmosphere */}
       <section className="relative min-h-[85vh] overflow-hidden bg-[#0F1E16] text-[oklch(0.97_0.012_88)]">
-        {/* Editorial Stock Image Background Layer */}
         <div className="absolute inset-0 z-0 opacity-40">
           <img
             src={heroImg}
@@ -128,13 +102,13 @@ function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F1E16] via-[#0F1E16]/80 to-transparent" />
         </div>
 
-        {/* Atmospheric 3D Volumetric Spice Particles Layer */}
+        {/* 3D Volumetric Spice Particles Layer */}
         <Suspense fallback={null}>
           <SpiceHeroCanvas />
         </Suspense>
 
         {/* Hero Editorial Content Overlay */}
-        <div className="container-page relative z-20 flex min-h-[85vh] items-center py-20">
+        <div className="container-page relative z-20 flex min-h-[85vh] items-center py-16 md:py-20">
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -151,7 +125,7 @@ function Home() {
               </h1>
 
               <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-[oklch(0.9_0.012_88_/_0.85)] font-light">
-                FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. Sourced with care, processed under hygienic standards, with zero artificial colours or preservatives.
+                FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste for healthy everyday cooking.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
@@ -168,19 +142,19 @@ function Home() {
                   className="rounded-full border-gold/30 bg-surface/20 px-8 text-[oklch(0.97_0.012_88)] hover:bg-surface/40 backdrop-blur"
                 >
                   <Compass className="mr-2 h-4 w-4 text-gold" />
-                  Find My Blend
+                  Find My Spice
                 </Button>
               </div>
 
               <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-[oklch(0.9_0.012_88_/_0.75)] border-t border-[oklch(1_0_0_/_0.12)] pt-6">
                 <span className="flex items-center gap-2 font-medium text-[oklch(0.97_0.012_88)]">
                   <Star className="h-4 w-4 fill-gold text-gold" />
-                  4.8 / 5 from 12,400+ reviews
+                  4.9 / 5 Customer Rating
                 </span>
                 <span>•</span>
-                <span>Trusted by 400+ Michelin & Fine Kitchens</span>
+                <span>400+ Kitchen Accounts</span>
                 <span>•</span>
-                <span>100% Traceable Harvests</span>
+                <span>100% Natural & Wholesome</span>
               </div>
             </motion.div>
           </div>
@@ -188,8 +162,8 @@ function Home() {
       </section>
 
       {/* Trust bar */}
-      <section className="border-b border-border bg-surface">
-        <div className="container-page grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="border-b border-border bg-surface py-10">
+        <div className="container-page grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {trust.map((t, i) => (
             <motion.div
               key={t.title}
@@ -208,67 +182,25 @@ function Home() {
         </div>
       </section>
 
-      {/* Categories */}
-      <Section
-        eyebrow="Browse Shelves"
-        title="Every shelf of the Indian kitchen"
-        action={
+      {/* Primary 4-Product Collection Showcase */}
+      <section className="container-page py-16 md:py-24">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div className="min-w-0">
+            <p className="eyebrow text-gold font-semibold">OUR MASALE RANGE</p>
+            <h2 className="mt-2 font-display text-3xl md:text-4xl">Pure Natural Authentic Taste — The 4 Core Spices</h2>
+          </div>
           <Button asChild variant="ghost" className="rounded-full">
             <Link to="/shop">
-              All products <ArrowRight className="ml-1.5 h-4 w-4" />
+              Shop collection <ArrowRight className="ml-1.5 h-4 w-4" />
             </Link>
           </Button>
-        }
-      >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {categories.map((c, i) => (
-            <motion.div
-              key={c.slug}
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: (i % 4) * 0.06 }}
-              className={i === 0 ? "sm:col-span-2 sm:row-span-2" : ""}
-            >
-              <Link
-                to="/category/$slug"
-                params={{ slug: c.slug }}
-                className="group relative block h-full min-h-[220px] overflow-hidden rounded-2xl border border-border"
-              >
-                <img
-                  src={c.image}
-                  alt={c.name}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.18_0.02_155_/_0.88)] via-[oklch(0.18_0.02_155_/_0.25)] to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-5">
-                  <p className="font-display text-xl text-[oklch(0.97_0.012_88)]">{c.name}</p>
-                  <p className="mt-1 text-sm text-[oklch(0.9_0.012_88_/_0.8)]">{c.tagline}</p>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
         </div>
-      </Section>
-
-      {/* Our Masale Range */}
-      <Section
-        eyebrow="OUR MASALE RANGE"
-        title="Pure Natural Authentic Taste — The 4 Core Spices"
-        action={
-          <Button asChild variant="ghost" className="rounded-full">
-            <Link to="/shop">
-              View all <ArrowRight className="ml-1.5 h-4 w-4" />
-            </Link>
-          </Button>
-        }
-      >
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((p, i) => (
             <ProductCard key={p.slug} product={p} index={i} />
           ))}
         </div>
-      </Section>
+      </section>
 
       {/* Interactive 3D Stone Grinder Section */}
       <div className="container-page">
@@ -277,54 +209,55 @@ function Home() {
         </Suspense>
       </div>
 
-      {/* Farm to kitchen */}
+      {/* Farm to kitchen Story & Brand Commitments */}
       <section className="bg-surface py-16 md:py-24 border-y border-border">
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
             className="min-w-0"
           >
-            <p className="eyebrow text-gold font-semibold">Har Vyanjan Mein, Shuddhata Ka Vaada!</p>
-            <h2 className="mt-2 font-display text-3xl md:text-4xl">
+            <h2 className="font-display text-3xl md:text-4xl leading-tight">
               Authentic Taste for Everyday Cooking & Healthy Living
             </h2>
             <p className="mt-5 leading-relaxed text-muted-foreground">
               FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste. We focus on sourcing high-quality raw materials, processing them under hygienic standards, and providing natural products that enhance everyday cooking. With a dedication to quality and customer satisfaction, FIRST FLAME aims to become a trusted name in households and food markets.
             </p>
-            <dl className="mt-8 grid grid-cols-3 gap-6">
+            <dl className="mt-8 grid grid-cols-3 gap-6 border-t border-border pt-6">
               {[
-                { n: "50", l: "Years of milling" },
-                { n: "260+", l: "Partner farms" },
-                { n: "48 hr", l: "Grind to pack" },
+                { n: "100%", l: "Pure & Natural" },
+                { n: "0", l: "Artificial Colours" },
+                { n: "48 hr", l: "Freshly Sealed" },
               ].map((s) => (
                 <div key={s.l} className="min-w-0">
-                  <dt className="font-display text-3xl text-primary">{s.n}</dt>
+                  <dt className="font-display text-3xl text-primary font-bold">{s.n}</dt>
                   <dd className="mt-1 text-xs text-muted-foreground">{s.l}</dd>
                 </div>
               ))}
             </dl>
-            <Button asChild className="mt-8 rounded-full px-7">
-              <Link to="/about">Read our story</Link>
+            <Button asChild className="mt-8 rounded-full px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
+              <Link to="/about">Read our full story</Link>
             </Button>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="grid grid-cols-2 gap-4"
           >
             <img
               src={farmImg}
-              alt="Farmer holding freshly harvested turmeric roots"
+              alt="Fresh raw spice materials sourced directly from farms"
               loading="lazy"
               className="h-64 w-full rounded-2xl object-cover shadow-soft sm:h-80 border border-border"
             />
             <img
               src={grindImg}
-              alt="Traditional stone grinding of turmeric"
+              alt="Hygienic stone milling under strict quality standards"
               loading="lazy"
               className="mt-8 h-64 w-full rounded-2xl object-cover shadow-soft sm:h-80 border border-border"
             />
@@ -332,28 +265,19 @@ function Home() {
         </div>
       </section>
 
-      {/* Freshly Ground & Sealed */}
-      <Section eyebrow="Freshly Ground & Sealed" title="Har Vyanjan Mein, Shuddhata Ka Vaada!">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((p, i) => (
-            <ProductCard key={p.slug} product={p} index={i} />
-          ))}
-        </div>
-      </Section>
-
-      {/* Testimonials */}
+      {/* Customer Reviews & Social Proof */}
       <section className="bg-primary py-16 text-primary-foreground md:py-24">
         <div className="container-page">
-          <p className="eyebrow text-gold">In Their Kitchens</p>
-          <h2 className="mt-2 max-w-2xl font-display text-3xl md:text-4xl">
-            Chefs, restaurateurs and home cooks agree
+          <h2 className="max-w-2xl font-display text-3xl md:text-4xl">
+            Trusted by Professional Chefs & Home Cooks
           </h2>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {testimonials.map((t, i) => (
               <motion.figure
                 key={t.name}
                 initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="rounded-2xl border border-[oklch(1_0_0_/_0.14)] bg-[oklch(1_0_0_/_0.06)] p-6 backdrop-blur-sm"
               >
@@ -375,16 +299,15 @@ function Home() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ Section */}
       <section className="container-page grid gap-12 py-16 md:py-24 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="min-w-0">
-          <p className="eyebrow text-gold font-semibold">Good to Know</p>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl">Questions, answered</h2>
+          <h2 className="font-display text-3xl md:text-4xl">Questions, answered</h2>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            Still unsure about something? Our team in Jaipur answers every message personally.
+            Have questions about our sourcing or bulk orders? Our team answers every inquiry personally.
           </p>
-          <Button asChild variant="outline" className="mt-6 rounded-full">
-            <Link to="/contact">Talk to us</Link>
+          <Button asChild variant="outline" className="mt-6 rounded-full border-border hover:bg-surface">
+            <Link to="/contact">Talk to our team</Link>
           </Button>
         </div>
         <Accordion type="single" collapsible className="w-full">
