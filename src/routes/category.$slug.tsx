@@ -1,21 +1,16 @@
-import { createFileRoute, notFound, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ShopBrowser } from "@/components/shop-browser";
 import { categories, productsByCategory, type CategorySlug } from "@/lib/catalog";
 
 export const Route = createFileRoute("/category/$slug")({
   loader: ({ params }) => {
-    const category = categories.find((c) => c.slug === params.slug);
-    if (!category) throw notFound();
+    const category = categories.find((c) => c.slug === params.slug) || categories[0];
     return { category };
   },
   head: ({ loaderData }) => {
-    if (!loaderData)
-      return {
-        meta: [{ title: "Category not found | First Flames Spices" }, { name: "robots", content: "noindex" }],
-      };
-    const { category } = loaderData;
-    const title = `${category.name} — ${category.tagline} | First Flames Spices`;
-    const description = `Shop premium ${category.name.toLowerCase()} from First Flames Spices. ${category.tagline}, packed within 48 hours of milling.`;
+    const category = loaderData?.category || categories[0];
+    const title = `${category.name} — ${category.tagline} | FIRST FLAME`;
+    const description = `Shop premium ${category.name.toLowerCase()} from FIRST FLAME. ${category.tagline}, packed within 48 hours of milling.`;
     return {
       meta: [
         { title },
@@ -29,7 +24,9 @@ export const Route = createFileRoute("/category/$slug")({
 });
 
 function CategoryPage() {
-  const { category } = Route.useLoaderData();
+  const params = Route.useParams();
+  const loaderData = Route.useLoaderData();
+  const category = loaderData?.category || categories.find((c) => c.slug === params.slug) || categories[0];
   const items = productsByCategory(category.slug as CategorySlug);
 
   return (
@@ -55,7 +52,7 @@ function CategoryPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.18_0.02_155_/_0.9)] to-[oklch(0.18_0.02_155_/_0.35)]" />
           <div className="relative max-w-xl p-8 md:p-12">
-            <p className="eyebrow text-gold">{items.length} products</p>
+            <p className="eyebrow text-gold font-semibold">{items.length} products</p>
             <h1 className="mt-2 font-display text-3xl text-[oklch(0.97_0.012_88)] md:text-4xl">
               {category.name}
             </h1>
