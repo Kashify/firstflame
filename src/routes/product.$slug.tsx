@@ -120,20 +120,20 @@ function ProductPage() {
 
   return (
     <>
-      <div className="container-page py-10 md:py-14">
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
+      <div className="container-page py-6 md:py-14">
+        <nav aria-label="Breadcrumb" className="mb-4 md:mb-6 flex flex-wrap items-center text-xs sm:text-sm text-muted-foreground">
           <Link to="/" className="hover:text-foreground">
             Home
           </Link>
-          <span className="mx-2">/</span>
+          <span className="mx-1.5">/</span>
           <Link to="/category/$slug" params={{ slug: product.category }} className="hover:text-foreground">
             {product.categoryName}
           </Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">{product.name}</span>
+          <span className="mx-1.5">/</span>
+          <span className="text-foreground truncate max-w-[160px] sm:max-w-none">{product.name}</span>
         </nav>
 
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-2">
           {/* Media gallery with 2D/3D toggle */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -194,7 +194,7 @@ function ProductPage() {
                 </div>
               </>
             ) : (
-              <Suspense fallback={<div className="h-[420px] rounded-3xl bg-surface animate-pulse" />}>
+              <Suspense fallback={<div className="h-[300px] sm:h-[420px] rounded-3xl bg-surface animate-pulse" />}>
                 <Product3DViewer productName={product.name} categoryName={product.categoryName} />
               </Suspense>
             )}
@@ -363,16 +363,16 @@ function ProductPage() {
         </div>
 
         {/* Tabbed Info */}
-        <div className="mt-16">
+        <div className="mt-10 md:mt-16">
           <Tabs defaultValue="details">
-            <TabsList className="w-full justify-start border-b border-border bg-transparent p-0 rounded-none">
-              <TabsTrigger value="details" className="rounded-none border-b-2 border-transparent px-6 pb-3 pt-2 font-display text-base data-[state=active]:border-primary data-[state=active]:bg-transparent">
+            <TabsList className="w-full justify-start border-b border-border bg-transparent p-0 rounded-none overflow-x-auto flex-nowrap shrink-0 whitespace-nowrap scrollbar-none">
+              <TabsTrigger value="details" className="rounded-none border-b-2 border-transparent px-3 sm:px-6 pb-2.5 pt-1.5 font-display text-sm sm:text-base data-[state=active]:border-primary data-[state=active]:bg-transparent shrink-0">
                 Product Details
               </TabsTrigger>
-              <TabsTrigger value="ingredients" className="rounded-none border-b-2 border-transparent px-6 pb-3 pt-2 font-display text-base data-[state=active]:border-primary data-[state=active]:bg-transparent">
+              <TabsTrigger value="ingredients" className="rounded-none border-b-2 border-transparent px-3 sm:px-6 pb-2.5 pt-1.5 font-display text-sm sm:text-base data-[state=active]:border-primary data-[state=active]:bg-transparent shrink-0">
                 Ingredients & Usage
               </TabsTrigger>
-              <TabsTrigger value="nutrition" className="rounded-none border-b-2 border-transparent px-6 pb-3 pt-2 font-display text-base data-[state=active]:border-primary data-[state=active]:bg-transparent">
+              <TabsTrigger value="nutrition" className="rounded-none border-b-2 border-transparent px-3 sm:px-6 pb-2.5 pt-1.5 font-display text-sm sm:text-base data-[state=active]:border-primary data-[state=active]:bg-transparent shrink-0">
                 Nutrition Facts
               </TabsTrigger>
             </TabsList>
@@ -440,10 +440,10 @@ function ProductPage() {
 
         {/* Related Products */}
         {related.length > 0 && (
-          <section className="mt-20">
+          <section className="mt-12 md:mt-20">
             <p className="eyebrow text-gold font-semibold">Pairs Perfectly With</p>
-            <h2 className="mt-2 font-display text-3xl text-foreground">Complementary Harvests</h2>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <h2 className="mt-1 sm:mt-2 font-display text-2xl sm:text-3xl text-foreground">Complementary Harvests</h2>
+            <div className="mt-6 sm:mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((p, i) => (
                 <ProductCard key={p.slug} product={p} index={i} />
               ))}
@@ -453,10 +453,10 @@ function ProductPage() {
 
         {/* Recently Viewed */}
         {recently.length > 0 && (
-          <section className="mt-16">
+          <section className="mt-10 md:mt-16">
             <p className="eyebrow text-gold font-semibold">Your Browsing History</p>
-            <h2 className="mt-2 font-display text-3xl text-foreground">Recently Viewed Spices</h2>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <h2 className="mt-1 sm:mt-2 font-display text-2xl sm:text-3xl text-foreground">Recently Viewed Spices</h2>
+            <div className="mt-6 sm:mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {recently.map((p, i) => (
                 <ProductCard key={p.slug} product={p} index={i} />
               ))}

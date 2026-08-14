@@ -111,14 +111,14 @@ export default function Product3DViewer({ productName, categoryName, primaryColo
 
   if (!mounted) {
     return (
-      <div className="relative h-[420px] w-full rounded-3xl border border-border bg-surface flex items-center justify-center p-4">
+      <div className="relative h-[300px] sm:h-[420px] w-full rounded-3xl border border-border bg-surface flex items-center justify-center p-4">
         <span className="eyebrow text-gold font-semibold">Loading 3D Inspector...</span>
       </div>
     );
   }
 
   return (
-    <div className="relative h-[420px] w-full rounded-3xl border border-border bg-gradient-to-b from-surface via-background to-surface p-4 overflow-hidden shadow-soft">
+    <div className="relative h-[300px] sm:h-[420px] w-full rounded-3xl border border-border bg-gradient-to-b from-surface via-background to-surface p-4 overflow-hidden shadow-soft touch-pan-y">
       <div className="absolute top-4 right-4 z-20 flex gap-2">
         <button
           onClick={() => setAutoRotate(!autoRotate)}
@@ -134,6 +134,7 @@ export default function Product3DViewer({ productName, categoryName, primaryColo
       </div>
 
       <Canvas
+        style={{ touchAction: "pan-y" }}
         camera={{ position: [0, 0.4, 4.0], fov: 45 }}
         gl={{ antialias: true, powerPreference: "high-performance" }}
       >

@@ -41,7 +41,7 @@ function OrderStatus() {
             <h1 className="mt-5 font-display text-3xl">Order confirmed</h1>
             <p className="mt-3 text-sm text-muted-foreground">
               Thank you. We've started packing. You'll get an email and SMS with tracking as soon as
-              your parcel leaves Jaipur.
+              your parcel leaves Faridabad.
             </p>
           </>
         ) : (
