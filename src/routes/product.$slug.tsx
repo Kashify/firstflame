@@ -114,7 +114,7 @@ function ProductPage() {
   const wishlisted = isWishlisted(product.slug);
 
   const related = relatedProducts(product);
-  const recently = recentlyViewed()
+  const recently = recentlyViewed
     .filter((p) => p.slug !== product.slug)
     .slice(0, 4);
 
@@ -445,6 +445,19 @@ function ProductPage() {
             <h2 className="mt-2 font-display text-3xl text-foreground">Complementary Harvests</h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((p, i) => (
+                <ProductCard key={p.slug} product={p} index={i} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Recently Viewed */}
+        {recently.length > 0 && (
+          <section className="mt-16">
+            <p className="eyebrow text-gold font-semibold">Your Browsing History</p>
+            <h2 className="mt-2 font-display text-3xl text-foreground">Recently Viewed Spices</h2>
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {recently.map((p, i) => (
                 <ProductCard key={p.slug} product={p} index={i} />
               ))}
             </div>
