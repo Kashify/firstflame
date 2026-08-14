@@ -18,9 +18,9 @@ import logoImg from "@/assets/brand-logo.png";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Secure Checkout | First Flames Spices" },
-      { name: "description", content: "Complete your First Flames Spices order securely." },
-      { property: "og:title", content: "Secure Checkout | First Flames Spices" },
+      { title: "Secure Checkout | First flame Spices" },
+      { name: "description", content: "Complete your First flame Spices order securely." },
+      { property: "og:title", content: "Secure Checkout | First flame Spices" },
       { property: "og:description", content: "Complete your order securely." },
       { name: "robots", content: "noindex" },
     ],

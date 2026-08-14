@@ -9,9 +9,9 @@ export const Route = createFileRoute("/search")({
   }),
   head: () => ({
     meta: [
-      { title: "Search | First Flames Spices" },
+      { title: "Search | First flame Spices" },
       { name: "description", content: "Search single-origin spices, masalas and gift boxes." },
-      { property: "og:title", content: "Search | First Flames Spices" },
+      { property: "og:title", content: "Search | First flame Spices" },
       { property: "og:description", content: "Search premium Indian spices and masalas." },
       { name: "robots", content: "noindex" },
     ],

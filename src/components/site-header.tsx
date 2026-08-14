@@ -157,7 +157,7 @@ export function SiteHeader() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="w-[86vw] max-w-sm overflow-y-auto p-6">
-                <SheetTitle className="font-display text-xl">First Flames Spices</SheetTitle>
+                <SheetTitle className="font-display text-xl">First Flame Spices</SheetTitle>
                 <nav className="mt-6 flex flex-col gap-1">
                   {navLinks.map((l) => (
                     <Link
@@ -240,10 +240,7 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <Link to="/" className="justify-self-center md:hidden">
-            <span className="font-display text-lg leading-none">First Flames</span>
-          </Link>
-
+     
           <div className="flex items-center justify-end gap-0.5">
             <Button
               variant="ghost"

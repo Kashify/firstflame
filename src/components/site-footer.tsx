@@ -115,7 +115,7 @@ export function SiteFooter() {
 
       <div className="border-t border-border">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} First Flames Spices Pvt. Ltd. · FSSAI Lic. 10019011002345</p>
+          <p>© {new Date().getFullYear()} First Flame Spices Pvt. Ltd. · FSSAI Lic. 10019011002345</p>
           <p>Shipping Policy · Returns · Privacy · Terms</p>
         </div>
       </div>

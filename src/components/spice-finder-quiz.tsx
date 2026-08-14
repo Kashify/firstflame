@@ -38,7 +38,7 @@ export function SpiceFinderQuiz({ isOpen, onClose }: SpiceQuizModalProps) {
             {step === 1 && "What heat level do you enjoy most in your dishes?"}
             {step === 2 && "What type of meals do you cook most often?"}
             {step === 3 && "How do you prefer to prepare your masalas?"}
-            {step === 4 && "Your Personalized First Flames Spice Curation"}
+            {step === 4 && "Your Personalized First flame Spice Curation"}
           </DialogTitle>
         </DialogHeader>
 

@@ -13,9 +13,9 @@ import { lineUnitPrice, useStore } from "@/lib/store";
 export const Route = createFileRoute("/cart")({
   head: () => ({
     meta: [
-      { title: "Your Shopping Bag | First Flames Spices" },
+      { title: "Your Shopping Bag | First flame Spices" },
       { name: "description", content: "Review your selected single-origin spices and gift boxes." },
-      { property: "og:title", content: "Your Shopping Bag | First Flames Spices" },
+      { property: "og:title", content: "Your Shopping Bag | First flame Spices" },
       { property: "og:description", content: "Review your bag and proceed to secure checkout." },
       { name: "robots", content: "noindex" },
     ],

@@ -11,9 +11,9 @@ export const Route = createFileRoute("/order/$id")({
   }),
   head: () => ({
     meta: [
-      { title: "Order Status | First Flames Spices" },
-      { name: "description", content: "Your First Flames Spices order status." },
-      { property: "og:title", content: "Order Status | First Flames Spices" },
+      { title: "Order Status | First flame Spices" },
+      { name: "description", content: "Your First flame Spices order status." },
+      { property: "og:title", content: "Order Status | First flame Spices" },
       { property: "og:description", content: "Your order status." },
       { name: "robots", content: "noindex" },
     ],

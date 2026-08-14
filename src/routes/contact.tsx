@@ -9,13 +9,13 @@ import { Textarea } from "@/components/ui/textarea";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Wholesale Enquiries | First Flames Spices" },
+      { title: "Contact & Wholesale Enquiries | First flame Spices" },
       {
         name: "description",
         content:
-          "Reach the First Flames Spices team in Jaipur for orders, wholesale accounts and restaurant supply.",
+          "Reach the First flame Spices team in Jaipur for orders, wholesale accounts and restaurant supply.",
       },
-      { property: "og:title", content: "Contact Us | First Flames Spices" },
+      { property: "og:title", content: "Contact Us | First flame Spices" },
       {
         property: "og:description",
         content: "Talk to our team in Jaipur about orders, wholesale and restaurant supply.",

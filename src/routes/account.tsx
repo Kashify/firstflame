@@ -8,9 +8,9 @@ import { useStore } from "@/lib/store";
 export const Route = createFileRoute("/account")({
   head: () => ({
     meta: [
-      { title: "My Account | First Flames Spices" },
+      { title: "My Account | First flame Spices" },
       { name: "description", content: "Manage your profile, shipping addresses and order history." },
-      { property: "og:title", content: "My Account | First Flames Spices" },
+      { property: "og:title", content: "My Account | First flame Spices" },
       { property: "og:description", content: "Your orders, addresses and wishlist." },
       { name: "robots", content: "noindex" },
     ],

@@ -7,9 +7,9 @@ import { useStore } from "@/lib/store";
 export const Route = createFileRoute("/wishlist")({
   head: () => ({
     meta: [
-      { title: "Your Wishlist | First Flames Spices" },
-      { name: "description", content: "Spices you've saved for later at First Flames Spices." },
-      { property: "og:title", content: "Your Wishlist | First Flames Spices" },
+      { title: "Your Wishlist | First flame Spices" },
+      { name: "description", content: "Spices you've saved for later at First flame Spices." },
+      { property: "og:title", content: "Your Wishlist | First flame Spices" },
       { property: "og:description", content: "Spices you've saved for later." },
       { name: "robots", content: "noindex" },
     ],
