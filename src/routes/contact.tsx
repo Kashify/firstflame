@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -72,18 +72,39 @@ function Contact() {
         </form>
 
         <aside className="space-y-4">
-          {[
-            { icon: MapPin, t: "Our Facility & Address", d: "S.F. COLONY, Faridabad- 121003, Haryana, India" },
-            { icon: Mail, t: "Email", d: "compliancesolutionpoint@gmail.com" },
-          ].map((c) => (
-            <div key={c.t} className="flex gap-3 rounded-2xl border border-border p-5">
-              <c.icon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-              <div className="min-w-0">
-                <p className="text-sm font-semibold">{c.t}</p>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
-              </div>
+          <div className="flex gap-3 rounded-2xl border border-border p-5 bg-card shadow-soft">
+            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+            <div className="min-w-0">
+              <p className="text-sm font-semibold">Registered Office Address</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                H. NO. 8/21, S.F. COLONY, Amarnagar, SECTOR 31, Faridabad- 121003, Haryana, India.
+              </p>
             </div>
-          ))}
+          </div>
+
+          <div className="flex gap-3 rounded-2xl border border-border p-5 bg-card shadow-soft">
+            <Phone className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+            <div className="min-w-0">
+              <p className="text-sm font-semibold">Contact Number</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                <a href="tel:+919654381510" className="hover:text-primary transition-colors font-medium">
+                  +91 9654381510
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div className="flex gap-3 rounded-2xl border border-border p-5 bg-card shadow-soft">
+            <Mail className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+            <div className="min-w-0">
+              <p className="text-sm font-semibold">Email</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                <a href="mailto:compliancesolutionpoint@gmail.com" className="hover:text-primary transition-colors">
+                  compliancesolutionpoint@gmail.com
+                </a>
+              </p>
+            </div>
+          </div>
         </aside>
       </div>
     </div>

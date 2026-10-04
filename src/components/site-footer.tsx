@@ -21,6 +21,17 @@ export function SiteFooter() {
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
             FIRST FLAME is a premium spices and dry fruits brand committed to delivering purity, freshness, and authentic taste for healthy everyday cooking.
           </p>
+          <div className="pt-1 text-xs text-muted-foreground space-y-1">
+            <p className="text-[11px] leading-relaxed">
+              <strong className="text-foreground">Regd. Office:</strong> H. NO. 8/21, S.F. COLONY, Amarnagar, SECTOR 31, Faridabad- 121003, Haryana, India.
+            </p>
+            <p className="text-[11px]">
+              <strong className="text-foreground">Phone:</strong>{" "}
+              <a href="tel:+919654381510" className="hover:text-primary transition-colors font-medium">
+                +91 9654381510
+              </a>
+            </p>
+          </div>
           <div className="flex gap-2">
             {[Instagram, Facebook, Linkedin, Youtube].map((Icon, i) => (
               <a
